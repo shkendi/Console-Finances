@@ -91,4 +91,9 @@ var finances = [
 
 const totalMonths = finances.length
 
+//  Find the total amount of profit/Loses over the entire period.
+
+const total = finances.reduce((acc, [, value]) => acc + value, 0)
+
 console.log(totalMonths)
+console.log(total)
