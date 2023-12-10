@@ -107,7 +107,14 @@ const averageChange = (sumChanges / (finances.length - 1)).toFixed(2)
 
 // Find the greatest increase in Profits/Loses
 
+const maxIncrease = Math.max(...finances.map(([, value]) => value))
+
+const greatestIncrease = finances.find(([_, value]) => value === maxIncrease)
+
 // Console logs of every step
-console.log(totalMonths)
-console.log(total)
-console.log(averageChange)
+console.log(`Total Months: ${totalMonths}`)
+console.log(`Total: ${total}`)
+console.log(`Average Change: ${averageChange}`)
+console.log(
+  `Greatest Increase in Profits/Loses: ${greatestIncrease[0]} ($${greatestIncrease[1]})`
+)
