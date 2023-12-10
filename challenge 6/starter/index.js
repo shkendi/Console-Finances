@@ -95,5 +95,19 @@ const totalMonths = finances.length
 
 const total = finances.reduce((acc, [, value]) => acc + value, 0)
 
+//  Calculate the average of the changes in Profit/Loses over the entire period
+
+const changes = finances.map(([, value], index, array) => {
+  if (index === 0) return 0
+  const prevValue = array[index - 1][1]
+  return value - prevValue
+})
+const sumChanges = changes.reduce((acc, change) => acc + change, 0)
+const averageChange = (sumChanges / (finances.length - 1)).toFixed(2)
+
+// Find the greatest increase in Profits/Loses
+
+// Console logs of every step
 console.log(totalMonths)
 console.log(total)
+console.log(averageChange)
