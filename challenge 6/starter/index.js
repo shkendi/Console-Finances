@@ -91,11 +91,11 @@ var finances = [
 
 const totalMonths = finances.length
 
-//  Find the total amount of profit/Loses over the entire period.
+//  Find the total amount of profit/Loses over the entire period by using the .reduce() method.
 
 const total = finances.reduce((acc, [, value]) => acc + value, 0)
 
-//  Calculate the average of the changes in Profit/Loses over the entire period
+//  Calculate the average of the changes in Profit/Loses over the entire period and round it up to the nearest houndridth by using the .toFixed(2) JS method.
 
 const changes = finances.map(([, value], index, array) => {
   if (index === 0) return 0
@@ -108,11 +108,17 @@ const averageChange = (sumChanges / (finances.length - 1)).toFixed(2)
 // Find the greatest increase in Profits/Loses
 
 const maxIncrease = Math.max(...finances.map(([, value]) => value))
-const minDecrease = Math.min(...finances.map(([, value]) => value))
 
 const greatestIncrease = finances.find(([_, value]) => value === maxIncrease)
+
+// Find the greatest decrease in Profits/Loses
+
+const minDecrease = Math.min(...finances.map(([, value]) => value))
+
 const greatestDecrease = finances.find(([_, value]) => value === minDecrease)
+
 // Console logs of every step
+
 console.log(`Total Months: ${totalMonths}`)
 
 console.log(`Total: ${total}`)
