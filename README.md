@@ -1,5 +1,7 @@
 # Unit 4 Challenge: Console Finances
 
+Depoyed link: https://shkendi.github.io/Console-Finances/
+
 ## Overview
 
 In this challenge, I'll be using the concepts I've learned to complete the required activity. This activity presents a real-world situation in which my newfound JavaScript skills will come in handy. My task is creating code for analyzing the financial records of a company. I have been provided with a financial dataset in the `starter/index.js` file and have to follow the instructions as below.
